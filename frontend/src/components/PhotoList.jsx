@@ -9,6 +9,7 @@ const PhotoList = (props) => {
         imageSource={photo.imageSource}
         username={photo.username}
         key={photo.id}
+        hideUserName={ photo.hideUserName }
       />
     );
   });
