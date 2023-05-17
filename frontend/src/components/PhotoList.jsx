@@ -14,7 +14,9 @@ const PhotoList = (props) => {
   });
 
   return (
-    <ul className="photo-list">{mappedPhotos}</ul>
+    <ul className="photo-list">
+      {props.photos.length === 0 && <h2>Loading your photos, please wait.</h2>}
+      {mappedPhotos}</ul>
   );
 };
 

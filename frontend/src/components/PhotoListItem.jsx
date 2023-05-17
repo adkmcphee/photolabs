@@ -6,10 +6,10 @@ const PhotoListItem = (props) => {
   console.log(props);
 
   return (
-    <div className="photo-list">
-      <img className="photo-list--image" src = {props.imageSource} alt="photo" />
+    <div className="product-list">
+      <img className="photo-list--image" src={props.imageSource} />
+      {props.hideUserName && <h3>{props.username}</h3>}
     </div>
-    
   );
 };
 
