@@ -6,7 +6,7 @@ const TopicList = (props) => {
   const mappedTopics = props.topics.map((topic) => {
     return (
       <TopicListItem
-        label={topic.title}
+        topic={topic.title}
         link={topic.link}
         key={topic.id} />
     );

@@ -9,6 +9,9 @@ const PhotoList = (props) => {
         imageSource={photo.urls.thumb}
         username={photo.user.username}
         key={photo.id}
+        id={photo.id}
+        photoFavourites={props.photoFavourites}
+        toggleFavourite={props.toggleFavourite}
         // hideUserName={ photo.hideUserName }
       />
     );
