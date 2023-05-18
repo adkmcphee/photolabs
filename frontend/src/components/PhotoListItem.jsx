@@ -4,7 +4,7 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  console.log(props);
+  console.log('photolistitem props:', props);
 
   return (
     <div className="photo-list--item">
@@ -15,11 +15,11 @@ const PhotoListItem = (props) => {
   );
 };
 
-PhotoListItem.defaultProps = {
-  username: "Jacob",
-  imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
-  id: 1,
-  hideUserName: false,
-};
+// PhotoListItem.defaultProps = {
+//   username: "Jacob",
+//   imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
+//   id: 1,
+//   hideUserName: false,
+// };
 
 export default PhotoListItem;

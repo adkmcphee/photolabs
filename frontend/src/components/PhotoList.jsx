@@ -6,10 +6,10 @@ const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo) => {
     return (
       <PhotoListItem
-        imageSource={photo.imageSource}
-        username={photo.username}
+        imageSource={photo.urls.thumb}
+        username={photo.user.username}
         key={photo.id}
-        hideUserName={ photo.hideUserName }
+        // hideUserName={ photo.hideUserName }
       />
     );
   });
@@ -21,27 +21,6 @@ const PhotoList = (props) => {
   );
 };
 
-PhotoList.defaultProps = {
-  photos: [
-    {
-      username: "Jacob",
-      imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
-      id: 1,
-      hideUserName: false,
-    },
-    {
-      username: "Jacob",
-      imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
-      id: 2,
-      hideUserName: false,
-    },
-    {
-      username: "Jacob",
-      imageSource: `${process.env.PUBLIC_URL}/Image.jpg`,
-      id: 3,
-      hideUserName: false,
-    },
-  ],
-};
+
 
 export default PhotoList;
