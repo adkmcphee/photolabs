@@ -5,6 +5,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import PhotoList from "../components/PhotoList";
 
 const HomeRoute = function (props) {
+  console.log('home route props:', props);
   const [photoFavourites, setIsPhotoFavourites] = useState({});
   const toggleFavourite = (id) => {
     console.log(id);
@@ -15,7 +16,11 @@ const HomeRoute = function (props) {
     }
   };
   
-  console.log(photoFavourites);
+  console.log('photofavs:', photoFavourites);
+
+  // const handleImageClick = (id) => {
+  //   console.log("Image clicked:", id);
+  // };
 
   const hasFavorites = Object.keys(photoFavourites).some((id) => photoFavourites[id]);
 
@@ -26,6 +31,7 @@ const HomeRoute = function (props) {
         photos={props.photos}
         photoFavourites={photoFavourites}
         toggleFavourite={toggleFavourite}
+        handleImageClick={props.handleImageClick}
       />
     </div>
   );

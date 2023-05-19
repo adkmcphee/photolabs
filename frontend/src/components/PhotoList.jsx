@@ -3,6 +3,7 @@ import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
+  console.log('photo list props:', props);
   const mappedPhotos = props.photos.map((photo) => {
     return (
       <PhotoListItem
@@ -12,6 +13,7 @@ const PhotoList = (props) => {
         id={photo.id}
         photoFavourites={props.photoFavourites}
         toggleFavourite={props.toggleFavourite}
+        handleImageClick={props.handleImageClick}
         // hideUserName={ photo.hideUserName }
       />
     );
