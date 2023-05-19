@@ -22,3 +22,14 @@ height: 20px;
     font-size: 16px;
   }
 }
+
+.fav-badge.active:before {
+  content: '';
+  background-color: yellow;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: -3px;
+  right: -3px;
+}

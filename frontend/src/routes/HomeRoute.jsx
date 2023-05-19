@@ -16,9 +16,12 @@ const HomeRoute = function (props) {
   };
   
   console.log(photoFavourites);
+
+  const hasFavorites = Object.keys(photoFavourites).some((id) => photoFavourites[id]);
+
   return (
     <div className="home-route">
-      <TopNavigationBar topics={props.topics} />
+      <TopNavigationBar topics={props.topics} hasFavourites={hasFavorites} />
       <PhotoList
         photos={props.photos}
         photoFavourites={photoFavourites}
