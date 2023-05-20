@@ -5,33 +5,20 @@ import PhotoDetailsModal from "./routes/PhotoDetailsModal";
 import "./App.scss";
 import "./styles/PhotoDetailsModal.scss";
 import HomeRoute from "./routes/HomeRoute";
+import useApplicationData from "./hooks/useApplicationData";
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedPhotoId, setSelectedPhotoId] = useState(null);
-  const [photoFavourites, setIsPhotoFavourites] = useState({});
 
-  const toggleFavourite = (id) => {
-    console.log(id);
-    if (photoFavourites[id] !== undefined) {
-      setIsPhotoFavourites({...photoFavourites, [id]: !photoFavourites[id]});
-    } else {
-      setIsPhotoFavourites({...photoFavourites, [id]: true});
-    }
-  };
-
-
-  const handleImageClick = (id) => {
-    console.log(`Image ${id} has been clicked`);
-    setSelectedPhotoId(id);
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
-
+  const {
+    isOpen,
+    selectedPhotoId,
+    photoFavourites,
+    toggleFavourite,
+    handleImageClick,
+    handleCloseModal,
+  } = useApplicationData();
+ 
   const selectedPhoto = photosData.find((photo) => photo.id === selectedPhotoId);
 
   return (
@@ -50,12 +37,6 @@ const App = () => {
         photoFavourites={photoFavourites}
         toggleFavourite={toggleFavourite}
       />}
-        
-      {/* <TopNavigationBar/> */}
-      {/* <TopicList/> */}
-      {/* <PhotoList/> */}
-      {/* <PhotoListItem/> */}
-      {/* <TopicListItem/> */}
     </div>
   );
 };

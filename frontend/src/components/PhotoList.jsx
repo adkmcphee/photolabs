@@ -3,7 +3,7 @@ import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
-  console.log('photo list props:', props);
+  // console.log('photo list props:', props);
   const mappedPhotos = props.photos.map((photo) => {
     return (
       <PhotoListItem

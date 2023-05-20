@@ -4,7 +4,7 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  console.log('photo list item props:', props);
+  // console.log('photo list item props:', props);
 
   const handleImageClick = () => {
     props.handleImageClick(props.id);

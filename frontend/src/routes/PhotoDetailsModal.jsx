@@ -11,7 +11,7 @@ export const PhotoDetailsModal = (props) => {
     (photo) => photo.title === props.selectedPhoto.title
   );
 
-  console.log("similar photos:", similarPhotos);
+  // console.log("similar photos:", similarPhotos);
 
   return (
     <div className="photo-details-modal">
@@ -49,8 +49,8 @@ export const PhotoDetailsModal = (props) => {
       </button>
       <div className="photo-details-modal--image-container">
         <PhotoFavButton
-          id={props.id}
-          isFavourited={props.photoFavourites[props.id]}
+          id={props.selectedPhoto.id}
+          isFavourited={props.photoFavourites[props.selectedPhoto.id]}
           toggleFavourite={props.toggleFavourite}
           handleImageClick={props.handleImageClick}
         />

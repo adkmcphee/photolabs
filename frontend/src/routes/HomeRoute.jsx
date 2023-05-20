@@ -5,7 +5,7 @@ import TopNavigationBar from "../components/TopNavigationBar";
 import PhotoList from "../components/PhotoList";
 
 const HomeRoute = function (props) {
-  console.log('home route props:', props);
+  // console.log('home route props:', props);
 
   
  
