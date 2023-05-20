@@ -1,10 +1,17 @@
 import React, { useState } from "react";
 import PhotoList from "../components/PhotoList";
 import PhotoListItem from "../components/PhotoListItem";
+import PhotoFavButton from "../components/PhotoFavButton";
 import "../styles/PhotoDetailsModal.scss";
 
 export const PhotoDetailsModal = (props) => {
-  console.log('photodetailsmodal props:', props);
+  console.log("photodetailsmodal props:", props);
+
+  const similarPhotos = props.photos.filter(
+    (photo) => photo.title === props.selectedPhoto.title
+  );
+
+  console.log("similar photos:", similarPhotos);
 
   return (
     <div className="photo-details-modal">
@@ -40,12 +47,27 @@ export const PhotoDetailsModal = (props) => {
           </defs>
         </svg>
       </button>
-      <img className= "photo-details-modal--image" src={props.selectedPhoto.urls.small}></img>
+      <div className="photo-details-modal--image-container">
+        <PhotoFavButton
+          id={props.id}
+          isFavourited={props.photoFavourites[props.id]}
+          toggleFavourite={props.toggleFavourite}
+          handleImageClick={props.handleImageClick}
+        />
+        <img
+          className="photo-details-modal--image"
+          src={props.selectedPhoto.urls.regular}
+          alt="Photo"
+        />
+        <h3 className='photo-details-modal--photographer-details'>{props.selectedPhoto.user.name}</h3>
+      </div>
+      <hr></hr>
       <header className="photo-details-modal--header">Similar photos</header>
       <PhotoList
-        photos={props.photos}
+        photos={similarPhotos}
         photoFavourites={props.photoFavourites}
-        toggleFavourite={props.toggleFavourite}/>
+        toggleFavourite={props.toggleFavourite}
+      />
     </div>
   );
 };

@@ -19,7 +19,7 @@ const PhotoListItem = (props) => {
         handleImageClick={props.handleImageClick}
       />
       <img className="photo-list--image" src={props.imageSource} onClick={handleImageClick} />
-      {/* {props.hideUserName && <h3>{props.username}</h3>} */}
+      <h3>{props.username}</h3>
     </div>
   );
 };
