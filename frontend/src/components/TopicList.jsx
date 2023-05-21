@@ -6,8 +6,10 @@ const TopicList = (props) => {
   const mappedTopics = props.topics.map((topic) => {
     return (
       <TopicListItem
+        handleTopicClick={props.handleTopicClick}
         topic={topic.title}
         link={topic.link}
+        topicId={topic.id}
         key={topic.id} />
     );
   });

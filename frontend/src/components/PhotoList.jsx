@@ -7,7 +7,7 @@ const PhotoList = (props) => {
   const mappedPhotos = props.photos.map((photo) => {
     return (
       <PhotoListItem
-        imageSource={photo.urls.thumb}
+        imageSource={photo.urls.regular}
         username={photo.user.username}
         key={photo.id}
         id={photo.id}

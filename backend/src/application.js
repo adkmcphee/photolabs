@@ -6,9 +6,11 @@ const helmet = require("helmet");
 const cors = require("cors");
 const db = require("./db")
 const app = express();
-console.log('db query:', db.query);
+// console.log('db query:', db.query);
+// console.log('db:', db);
 const photos = require("./routes/photos");
 const topics = require("./routes/topics");
+const images = require("./routes/images");
 
 function read(file) {
   return new Promise((resolve, reject) => {
@@ -35,6 +37,8 @@ module.exports = function application(
   // TODO: update to topics and photos
   app.use("/api", photos(db));
   app.use("/api", topics(db));
+  app.use(images);
+
 
   if (ENV === "development" || ENV === "test") {
     Promise.all([

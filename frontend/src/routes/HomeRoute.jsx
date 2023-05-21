@@ -18,7 +18,7 @@ const HomeRoute = function (props) {
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={props.topics} hasFavourites={hasFavorites} />
+      <TopNavigationBar topics={props.topics} hasFavourites={hasFavorites} handleTopicClick={props.handleTopicClick} />
       <PhotoList
         photos={props.photos}
         photoFavourites={props.photoFavourites}
