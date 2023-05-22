@@ -27,6 +27,26 @@ Clone this repository to your local machine.
 
 Install dependencies with `npm install` in each respective `/frontend` and `/backend`.
 
+This application uses the following dependencies:
+
+Front-end
+* React
+* SASS
+* React-dom
+* React-scripts
+* Web-vitals
+
+Back-end
+* Body-parser
+* Cors
+* Dotenv
+* Express
+* Helmet
+* PG
+* Socket.io
+* Ws
+
+
 Please refer to the frontend- and backend-specific READMEs to assist further with setup. 
 
 ## [Frontend] Running Webpack Development Server
