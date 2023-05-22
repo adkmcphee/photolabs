@@ -27,7 +27,6 @@ const App = () => {
   // console.log("photos data:", photosData);
 
   useEffect(() => {
-    // console.log('selectedTopicId: ', selectedTopicId);
 
     if (selectedTopicId) {
       fetch(`http://localhost:8001/api/topics/photos/${selectedTopicId}`)

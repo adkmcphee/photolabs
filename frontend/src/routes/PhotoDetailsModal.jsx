@@ -7,9 +7,9 @@ import "../styles/PhotoDetailsModal.scss";
 export const PhotoDetailsModal = (props) => {
   console.log("photodetailsmodal props:", props);
 
-  const similarPhotos = props.photos.filter(
-    (photo) => photo.title === props.selectedPhoto.title
-  );
+  // const similarPhotos = props.photos.filter(
+  //   (photo) => photo.id === props.selectedPhoto.id
+  // );
 
   // console.log("similar photos:", similarPhotos);
 
@@ -64,7 +64,7 @@ export const PhotoDetailsModal = (props) => {
       <hr></hr>
       <header className="photo-details-modal--header">Similar photos</header>
       <PhotoList
-        photos={similarPhotos}
+        photos={props.selectedPhoto.similar_photos}
         photoFavourites={props.photoFavourites}
         toggleFavourite={props.toggleFavourite}
       />
