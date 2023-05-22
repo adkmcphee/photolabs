@@ -11,11 +11,11 @@ If a user likes a photo, they can favourite it by clicking on the heart icon. If
 
 ## Screenshots
 
-![""]()
+!["Home page of application with all images visible."](https://github.com/adkmcphee/photolabs/blob/main/docs/photolabs-homepage.png)
 
-![""]()
+!["A good boy being showin in modal view."](https://github.com/adkmcphee/photolabs/blob/main/docs/photolabs-modalView.png)
 
-![""]()
+!["Page showing only travel-related images."](https://github.com/adkmcphee/photolabs/blob/main/docs/photolabs-travel-page.png)
 
 ## Setup
 To set up this project, please follow the below steps:
