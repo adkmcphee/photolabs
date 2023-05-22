@@ -4,7 +4,7 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  // console.log('photo list item props:', props);
+  console.log("photo list item props:", props);
 
   const handleImageClick = () => {
     props.handleImageClick(props.id);
@@ -18,12 +18,17 @@ const PhotoListItem = (props) => {
         toggleFavourite={props.toggleFavourite}
         handleImageClick={props.handleImageClick}
       />
-      <img className="photo-list--image" src={props.imageSource} onClick={handleImageClick} />
-      <h3>{props.username}</h3>
+      <img
+        className="photo-list--image"
+        src={props.imageSource}
+        onClick={handleImageClick}
+      />
+      <div className= 'photo-list--user-box'>
+        <img className="photo-list--user-profile" src={props.profilePic}></img>
+        <h3 className="photo-list--user-info">{props.username}</h3>
+      </div>
     </div>
   );
 };
-
-
 
 export default PhotoListItem;

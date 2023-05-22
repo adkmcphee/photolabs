@@ -46,3 +46,11 @@
 .photo-list--user-location {
   color: #838383;
 }
+
+.photo-list--user-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+}

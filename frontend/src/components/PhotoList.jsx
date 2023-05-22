@@ -3,12 +3,13 @@ import PhotoListItem from "./PhotoListItem";
 import "../styles/PhotoList.scss";
 
 const PhotoList = (props) => {
-  // console.log('photo list props:', props);
+  console.log('photo list props:', props);
   const mappedPhotos = props.photos.map((photo) => {
     return (
       <PhotoListItem
         imageSource={photo.urls.regular}
-        username={photo.user.username}
+        username={photo.user.name}
+        profilePic={photo.user.profile}
         key={photo.id}
         id={photo.id}
         photoFavourites={props.photoFavourites}

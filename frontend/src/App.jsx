@@ -23,8 +23,8 @@ const App = () => {
     handleTopicClick,
   } = useApplicationData();
 
-  console.log("App selectedTopicId: ", selectedTopicId);
-  console.log("photos data:", photosData);
+  // console.log("App selectedTopicId: ", selectedTopicId);
+  // console.log("photos data:", photosData);
 
   useEffect(() => {
     // console.log('selectedTopicId: ', selectedTopicId);
