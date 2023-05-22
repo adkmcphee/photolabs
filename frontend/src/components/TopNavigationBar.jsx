@@ -6,7 +6,12 @@ import "../styles/TopNavigationBar.scss";
 const TopNavigation = (props) => {
   return (
     <div className="top-nav-bar">
-      <span className="top-nav-bar--logo">PhotoLabs</span>
+      <span
+        className="top-nav-bar--logo"
+        onClick={() => props.handleTopicClick(null)}
+      >
+        PhotoLabs
+      </span>
       <TopicList
         photos={props.photos}
         topics={props.topics}
