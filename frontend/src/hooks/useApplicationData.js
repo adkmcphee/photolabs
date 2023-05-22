@@ -62,14 +62,14 @@ export default function useApplicationData() {
   };
 
   const handleTopicClick = (id) => {
-    console.log('handleTopicClick triggered with id:', id);
+    console.log("handleTopicClick triggered with id:", id);
     dispatch({
       type: ACTIONS.GET_PHOTOS_BY_TOPIC,
       payload: { selectedTopicId: id },
     });
   };
 
-  console.log('app state: ', state);
+  console.log("app state: ", state);
 
   return {
     ...state,

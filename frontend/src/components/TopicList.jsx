@@ -10,13 +10,11 @@ const TopicList = (props) => {
         topic={topic.title}
         link={topic.link}
         topicId={topic.id}
-        key={topic.id} />
+        key={topic.id}
+      />
     );
   });
-  return (
-    <div className="top-nav-bar--topic-list">{mappedTopics}</div>
-  );
+  return <div className="top-nav-bar--topic-list">{mappedTopics}</div>;
 };
-
 
 export default TopicList;

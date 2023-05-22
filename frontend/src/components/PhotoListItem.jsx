@@ -1,11 +1,8 @@
 import React from "react";
-
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
 const PhotoListItem = (props) => {
-  console.log("photo list item props:", props);
-
   const handleImageClick = () => {
     props.handleImageClick(props.id);
   };
@@ -23,7 +20,7 @@ const PhotoListItem = (props) => {
         src={props.imageSource}
         onClick={handleImageClick}
       />
-      <div className= 'photo-list--user-box'>
+      <div className="photo-list--user-box">
         <img className="photo-list--user-profile" src={props.profilePic}></img>
         <h3 className="photo-list--user-info">{props.username}</h3>
       </div>

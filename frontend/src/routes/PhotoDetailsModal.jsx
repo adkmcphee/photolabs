@@ -1,18 +1,9 @@
 import React, { useState } from "react";
 import PhotoList from "../components/PhotoList";
-import PhotoListItem from "../components/PhotoListItem";
 import PhotoFavButton from "../components/PhotoFavButton";
 import "../styles/PhotoDetailsModal.scss";
 
 export const PhotoDetailsModal = (props) => {
-  console.log("photodetailsmodal props:", props);
-
-  // const similarPhotos = props.photos.filter(
-  //   (photo) => photo.id === props.selectedPhoto.id
-  // );
-
-  // console.log("similar photos:", similarPhotos);
-
   return (
     <div className="photo-details-modal">
       <button
@@ -59,7 +50,9 @@ export const PhotoDetailsModal = (props) => {
           src={props.selectedPhoto.urls.regular}
           alt="Photo"
         />
-        <h3 className='photo-details-modal--photographer-details'>{props.selectedPhoto.user.name}</h3>
+        <h3 className="photo-details-modal--photographer-details">
+          {props.selectedPhoto.user.name}
+        </h3>
       </div>
       <hr></hr>
       <header className="photo-details-modal--header">Similar photos</header>

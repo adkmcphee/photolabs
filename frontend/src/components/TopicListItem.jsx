@@ -1,5 +1,4 @@
 import React from "react";
-import useApplicationData from "../hooks/useApplicationData";
 import "../styles/TopicListItem.scss";
 
 const TopicListItem = (props) => {

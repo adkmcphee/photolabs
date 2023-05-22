@@ -4,10 +4,8 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
 const cors = require("cors");
-const db = require("./db")
+const db = require("./db");
 const app = express();
-// console.log('db query:', db.query);
-// console.log('db:', db);
 const photos = require("./routes/photos");
 const topics = require("./routes/topics");
 const images = require("./routes/images");
@@ -17,7 +15,7 @@ function read(file) {
     fs.readFile(
       file,
       {
-        encoding: "utf-8"
+        encoding: "utf-8",
       },
       (error, data) => {
         if (error) return reject(error);
@@ -27,9 +25,7 @@ function read(file) {
   });
 }
 
-module.exports = function application(
-  ENV,
-) {
+module.exports = function application(ENV) {
   app.use(cors());
   app.use(helmet());
   app.use(bodyparser.json());
@@ -39,11 +35,10 @@ module.exports = function application(
   app.use("/api", topics(db));
   app.use(images);
 
-
   if (ENV === "development" || ENV === "test") {
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
-      read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
+      read(path.resolve(__dirname, `db/schema/${ENV}.sql`)),
     ])
       .then(([create, seed]) => {
         app.get("/api/debug/reset", (request, response) => {
@@ -55,12 +50,12 @@ module.exports = function application(
             });
         });
       })
-      .catch(error => {
+      .catch((error) => {
         console.log(`Error setting up the reset route: ${error}`);
       });
   }
 
-  app.close = function() {
+  app.close = function () {
     return db.end();
   };
 
